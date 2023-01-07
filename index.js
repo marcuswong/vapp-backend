@@ -42,7 +42,7 @@ const options = {
 const app = express();
 app.use(express.json());
 
-// expressJSDocSwagger(app)(options);
+expressJSDocSwagger(app)(options);
 
 const port = 3000;
 
