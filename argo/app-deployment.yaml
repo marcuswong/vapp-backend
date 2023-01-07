@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vapp
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: vapp
+  template:
+    metadata:
+      labels:
+        app: vapp
+    spec:
+      containers:
+      - image: localhost:32000/vapp:latest
+        name: vapp
+        ports:
+        - containerPort: 80
