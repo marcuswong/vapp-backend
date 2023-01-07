@@ -17,4 +17,4 @@ spec:
       - image: localhost:32000/vapp:latest
         name: vapp
         ports:
-        - containerPort: 80
+        - containerPort: 3000
