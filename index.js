@@ -1,6 +1,6 @@
 const express = require('express');
+var cors = require('cors')
 const expressJSDocSwagger = require('express-jsdoc-swagger');
-var bodyParser = require('body-parser'); 
 
 
 const options = {
@@ -41,12 +41,16 @@ const options = {
 
 const app = express();
 app.use(express.json());
+app.use(cors())
+
 
 expressJSDocSwagger(app)(options);
 
 const port = 3000;
 
 const db = require("./models/sequelize.js");
+
+console.log ("cors!!!!!"); 
 
 db.sequelize.sync()
   .then(() => {
